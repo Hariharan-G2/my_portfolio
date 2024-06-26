@@ -114,10 +114,19 @@ document.addEventListener('DOMContentLoaded', function () {
       modalCodeLink.style.display = 'none';
       modalWebsiteLink.style.display = 'none';
     }
-
-
     modalImage.src = button.querySelector('img').src;
   });
 });
+
+// Email Sending
+function sendEmail(event) {
+    event.preventDefault(); 
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+	const mailtoLink = `mailto:ghariharan2421@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message)}`;
+    window.location.href = mailtoLink;
+}
 
 
